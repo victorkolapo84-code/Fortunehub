@@ -1,0 +1,943 @@
+/* CSS Variables */
+:root {
+    --primary: #4361ee;
+    --secondary: #3f37c9;
+    --accent: #4cc9f0;
+    --light: #f8f9fa;
+    --dark: #212529;
+    --success: #4ade80;
+    --warning: #facc15;
+    --danger: #f87171;
+    --gray: #6c757d;
+    --light-gray: #e9ecef;
+    --border: #dee2e6;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: #f5f7ff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+}
+
+/* --- BUTTON BASE STYLES --- */
+.btn {
+    display: inline-block;
+    padding: 12px 25px; /* Adjusted padding */
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent; /* Ensure border is always defined */
+    font-size: 1.1rem; /* Adjusted font size */
+    text-align: center;
+    width: 100%; /* Default to full width for flex containers */
+}
+
+
+/* ------------------------------------------------------------------------- */
+/* --- 1. Primary Button (Solid Blue: #1D2386) - Used for 'Shop Now' & 'Checkout' --- */
+/* ------------------------------------------------------------------------- */
+.btn-primary { 
+    /* Edit the background and border color here */
+    background-color: transparent; 
+    color: white; 
+    border-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    /* Edit the hover background and border color here */
+    background-color: #161c6b; 
+    border-color: #161c6b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-tertiary {
+    
+    background-color: #1D2386; 
+    color: white; 
+    border-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-tertiary:hover {
+    /* Edit the hover background and border color here */
+    background-color: #161c6b; 
+    border-color: #161c6b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------------------------------------------------- */
+/* --- 2. Outline Button (Outline/White) - Used for 'Browse Categories' & 'Buy Now' --- */
+/* --------------------------------------------------------------------------------- */
+.btn-outline { 
+    /* Edit the background, text, and border color here */
+    background-color: transparent; 
+    color: white; 
+    border-color: white; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline:hover {
+    /* Edit the hover background, text, and border color here */
+    background-color: #161c6b;
+    color: white; 
+    border-color: #1D2386; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ----------------------------------------------------------------------------- */
+/* --- 3. Secondary Button - Used for 'Continue Shopping' & 'Out of Stock' badge --- */
+/* ----------------------------------------------------------------------------- */
+.btn-secondary {
+    /* Edit the background, text, and border color here */
+    background-color: var(--light-gray);
+    color: var(--dark);
+    border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+    /* Edit the hover background color here */
+    background-color: #BA1921;
+    color: white;
+}
+
+
+/* --------------------------------------------------------------------------------- */
+/* --- 4. Product Card Action Button: Add to Cart (Red: #BA1921) --- */
+/* --------------------------------------------------------------------------------- */
+.btn-add-to-cart { 
+    /* Edit the background and border color here */
+    background-color: #BA1921;
+    color: white;
+    border: 2px solid #BA1921;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 16px;
+    width: 100%; 
+}
+
+.btn-add-to-cart:hover {
+    /* Edit the hover background and border color here */
+    background-color: #9e151c; 
+    border-color: #9e151c;
+    transform: translateY(-2px);
+}
+
+
+/* --------------------------------------------------------------------------------- */
+/* --- 5. Product Card Action Button: Buy Now (Blue: #1D2386) --- */
+/* --------------------------------------------------------------------------------- */
+.btn-buy-now { 
+    /* Edit the background and border color here */
+    background-color: #1D2386;
+    color: white;
+    border: 2px solid #1D2386;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 16px;
+    width: 100%; 
+}
+
+.btn-buy-now:hover {
+    /* Edit the hover background and border color here */
+    background-color: #161c6b; 
+    border-color: #161c6b;
+    transform: translateY(-2px);
+}
+
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #1D2386;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #BA1921;
+    border-radius: 2px;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+   
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #1D2386;
+}
+
+.logo span {
+    color: #BA1921;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    color: var(--dark);
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.icon-btn {
+    position: relative;
+    font-size: 1.4rem;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--danger);
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container {
+    position: relative;
+    margin: 20px 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border: 2px solid var(--border);
+    border-radius: 30px;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    font-size: 18px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('fot.png');
+    background-size: cover;      
+    background-position: center; 
+    background-repeat: no-repeat; 
+
+    color: white;
+    padding: 80px 20px; 
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;     
+    
+    width: 100%;
+    min-height: 60vh; 
+    text-align: center;
+}
+
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    /* Center the button container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Hero Buttons Container */
+.hero-btns {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+    width: 100%; 
+    max-width: 350px; 
+    margin-top: 20px; 
+}
+
+
+/* Categories Section */
+.categories {
+    padding: 60px 0;
+}
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px; 
+    padding: 20px 0;
+}
+
+.category-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border: 1px solid #eee;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    border-color: var(--primary); 
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: #1D2386; 
+    margin-bottom: 15px;
+}
+
+.category-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.category-card p {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* Products Section */
+.products {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+html {
+    scroll-behavior: smooth;
+    }
+
+.filter-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    background: var(--light-gray);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #1D2386;
+    color: white;
+}
+
+/* --- PRODUCT GRID LAYOUT --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 30px;                     /* Space between items */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* Switch to 1 column on small screens */
+        gap: 20px;
+    }
+}
+
+.product-card {
+    width: 100%;                 /* Fill the grid cell */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;               /* Optional: inner spacing */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: shadow */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light);
+    position: relative;
+}
+
+.product-image img {
+    max-height: 180px;
+    object-fit: contain;
+}
+
+/* Styling for Tags */
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+/* 1. SALE (Blue) */
+.badge-sale {
+    background-color: #007bff; /* A nice blue */
+}
+
+/* 2. SOLD (Red) */
+.badge-sold {
+    background-color: #dc3545; /* A strong red */
+}
+
+/* 3. NEW (Green) */
+.badge-new {
+    background-color: #28a745; /* A vibrant green */
+}
+
+/* 4. OUT OF STOCK (Gray/Initial - for non-tag indication) */
+/* You might apply this to the whole product card to make it look unavailable */
+.product-card.out-of-stock {
+    opacity: 0.6; /* Dim the card */
+    pointer-events: none; /* Make it unclickable */
+}
+
+/* A separate badge for Out of Stock */
+.badge-out-of-stock {
+    background-color: #6c757d; /* Gray */
+}
+
+
+.product-info {
+    padding: 20px;
+}
+
+.product-category {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.product-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.product-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.product-description {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.product-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* Cart Modal */
+/* --- Modal Styling (General) --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%; 
+    max-width: 500px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation-name: modalopen;
+    animation-duration: 0.4s;
+}
+
+@keyframes modalopen {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- Cart Items Styling --- */
+
+.cart-items {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-grow: 1; 
+}
+
+.item-details img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.item-info h4 {
+    font-size: 1.3rem;
+    margin: 0;
+    color: #333;
+}
+
+.item-price {
+    font-weight: bold;
+    color: #333;
+}
+
+/* --- Quantity Controls & Remove Button --- */
+
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden; 
+    margin-right: 10px;
+}
+
+.item-quantity button {
+    background: white;
+    border: none;
+    color: var(--dark);
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.item-quantity button:hover {
+    background: var(--light-gray);
+}
+
+.item-quantity span {
+    padding: 0 10px;
+    font-weight: 600;
+    color: var(--dark);
+    user-select: none;
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+}
+
+
+.remove-item {
+    color: var(--danger); 
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.remove-item:hover {
+    color: #bd2130;
+}
+
+/* --- Cart Summary & Actions --- */
+.cart-summary {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #eee;
+}
+
+/* New Subtotal/Shipping Rows */
+.cart-total-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.subtotal-row,
+.shipping-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Grand Total Row */
+.cart-total.grand-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem; 
+    color: var(--dark);
+    margin-bottom: 20px;
+    padding: 0; 
+    border-top: none;
+}
+
+.cart-total.grand-total-row strong {
+    font-weight: 700;
+    color: #1D2386; 
+    font-size: 1.4rem;
+}
+
+.cart-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    color: #1D2386;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #BA1921;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #adb5bd;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px; 
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #333; 
+    border-radius: 50%; 
+    text-decoration: none;
+    transition: all 0.3s ease; 
+    position: relative;
+}
+
+.social-btn i {
+    font-size: 20px;
+    color: #fff; 
+    transition: all 0.3s ease;
+}
+
+/* --- ALWAYS COLORFUL BUTTONS --- */
+.social-btn.facebook {
+    background-color: #1877F2;
+    border: 1px solid #1877F2;
+}
+
+.social-btn.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border: none;
+}
+
+.social-btn.twitter {
+    background-color: #000;
+    border: 1px solid #fff; 
+}
+
+.social-btn.whatsapp {
+    background-color: #25D366;
+    border: 1px solid #25D366;
+}
+
+/* --- Optional: Make them bounce when you Tap/Hover --- */
+.social-btn:hover, .social-btn:active {
+    transform: translateY(-5px); 
+    filter: brightness(1.2); 
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #adb5bd;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    /* Set product grid to 2 columns on tablets/mid-screens */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cart-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .item-details {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .item-quantity {
+        margin-top: 10px;
+    }
+    
+    /* Ensure the grid reverts to 1 column on smaller devices */
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .product-actions {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
